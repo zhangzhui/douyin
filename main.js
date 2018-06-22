@@ -1,43 +1,38 @@
-const {
-    app,
-    BrowserWindow
-} = require('electron');
-const electronLocalshortcut = require('electron-localshortcut');
-let win
+const { app, BrowserWindow } = require("electron");
+const electronLocalshortcut = require("electron-localshortcut");
+let win;
 
 function createWindow() {
-    win = new BrowserWindow({
-        width: 400,
-        height: 800,
-        frame: false,
-        webPreferences: {
-            webSecurity: false
-        },
-    })
-    win.loadFile('index.html');
-    win.on('closed', () => {
-        win = null;
-        listerDown();
-    })
+  win = new BrowserWindow({
+    width: 400,
+    height: 820,
+    webPreferences: {
+      webSecurity: false
+    }
+  });
+  win.loadFile("index.html");
 }
 
 function listerDown() {
-    if (!win) {
-        createWindow();
+  createWindow();
+  electronLocalshortcut.register(win, "Down", () => {
+    if (win) {
+      win.close();
     }
-    electronLocalshortcut.register(win, 'Down', () => {
-        if (win) {
-            win.close();
-        }
-    });
+    listerDown();
+  });
 }
 
-app.on('ready', () => {
-    listerDown();
-})
+app.on("ready", () => {
+  listerDown();
+});
 
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit()
-    }
-})
+app.on("activate", () => {
+  listerDown();
+});
+
+app.on("window-all-closed", () => {
+  if (process.platform !== "darwin") {
+    app.quit();
+  }
+});

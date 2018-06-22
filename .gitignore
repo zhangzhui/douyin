@@ -73,3 +73,6 @@ typings/
 .serverless
 
 DouYin-*/
+
+*.tar.gz
+*.zip
