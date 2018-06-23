@@ -39,12 +39,18 @@
     footer {
         margin-top: 20px;
     }
+
+    #update {
+        color: blue;
+        text-decoration: underline;
+    }
 </style>
 
 <body>
     <div class="center">
         <video id="video" controls loop preload="auto" height=500></video>
     </div>
+    <div id="message" class="center"></div>
     <div id="info">
         <img id="avatar" src="" alt="avatar">
         <div>
@@ -68,6 +74,11 @@
     function getPageUrl() {
         axios.get('http://dy.golmic.com')
             .then(function (response) {
+                var package = require("./package.json");
+                if (response.data.version > package.version) {
+                    let message = '版本太低，请<a id="update">前往升级</a>'
+                    document.getElementById('message').innerHTML = message;
+                }
                 if (response.data.code === 0) {
                     getVideoInfo(response.data.url);
                 } else {
@@ -101,6 +112,12 @@
             });
     }
     window.onload = getPageUrl;
+    const shell = require('electron').shell
+
+    document.getElementById('message').addEventListener('click', function (event) {
+        console.log(event);
+        shell.openExternal("https://github.com/lujqme/douyin/releases")
+    })
 </script>
 
 </html>

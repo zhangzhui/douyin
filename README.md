@@ -1,5 +1,7 @@
 # 抖音 桌面版
 
+![](./icons/a.png)
+
 ## 下载
 
 [releases 页面下载相应系统](https://github.com/lujqme/douyin/releases)
