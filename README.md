@@ -4,7 +4,11 @@
 
 ## 下载
 
-[releases 页面下载相应系统](https://github.com/lujqme/douyin/releases)
+* Github Releases：
+[releases页面](https://github.com/lujqme/douyin/releases)下载相应系统对应版本
+* 服务器分发：[Windows](https://dl.lujianqiang.com/DouYin-win32-x64.zip) | [Linux](https://dl.lujianqiang.com/DouYin-linux-x64.zip) | [mac OS](https://dl.lujianqiang.com/DouYin-darwin-x64.zip)
+
+
 
 ## 使用
 
