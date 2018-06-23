@@ -1,25 +1,27 @@
 const { app, BrowserWindow } = require("electron");
 const electronLocalshortcut = require("electron-localshortcut");
+let wins = new Array();
 let win;
 
 function createWindow() {
   win = new BrowserWindow({
-    width: 400,
-    height: 820,
+    width: 350,
+    height: 750,
     webPreferences: {
       webSecurity: false
     }
   });
+  wins.push(win);
   win.loadFile("index.html");
 }
 
 function listerDown() {
   createWindow();
   electronLocalshortcut.register(win, "Down", () => {
-    if (win) {
-      win.close();
-    }
     listerDown();
+    if (wins.length > 1){
+      wins.shift().close();
+    }
   });
 }
 

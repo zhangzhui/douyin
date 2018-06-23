@@ -5,9 +5,6 @@
   "main": "main.js",
   "author": "golmic",
   "license": "MIT",
-  "devDependencies": {
-    "electron": "^2.0.2"
-  },
   "dependencies": {
     "electron-localshortcut": "^3.1.0"
   }
