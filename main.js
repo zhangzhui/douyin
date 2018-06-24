@@ -1,6 +1,5 @@
 const { app, BrowserWindow } = require("electron");
 const electronLocalshortcut = require("electron-localshortcut");
-let wins = new Array();
 let win;
 
 function createWindow() {
@@ -11,26 +10,24 @@ function createWindow() {
       webSecurity: false
     }
   });
-  wins.push(win);
-  win.loadFile("index.html");
-}
-
-function listerDown() {
-  createWindow();
   electronLocalshortcut.register(win, "Down", () => {
-    listerDown();
-    if (wins.length > 1){
-      wins.shift().close();
-    }
+    win.loadFile("index.html");
+  });
+  win.on("closed", () => {
+    win = null;
   });
 }
 
 app.on("ready", () => {
-  listerDown();
+  createWindow();
+  win.loadFile("index.html");
 });
 
 app.on("activate", () => {
-  listerDown();
+  if (win === null) {
+    createWindow();
+  }
+  win.loadFile("index.html");
 });
 
 app.on("window-all-closed", () => {
