@@ -5,6 +5,7 @@
 ## 应用界面
 
 ![](./screenshot/macos.png)
+![](./screenshot/windows.png)
 
 ## 下载
 
