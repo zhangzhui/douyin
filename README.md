@@ -2,13 +2,15 @@
 
 ![](./icons/a.png)
 
+## 应用界面
+
+![](./screenshot/macos.png)
+
 ## 下载
 
-* Github Releases：
-[releases页面](https://github.com/lujqme/douyin/releases)下载相应系统对应版本
-* 服务器分发：[Windows](https://dl.lujianqiang.com/DouYin-win32-x64.zip) | [Linux](https://dl.lujianqiang.com/DouYin-linux-x64.zip) | [mac OS](https://dl.lujianqiang.com/DouYin-darwin-x64.zip)
-
-
+- Github Releases：
+  [releases 页面](https://github.com/lujqme/douyin/releases)下载相应系统对应版本
+- 服务器分发：[Windows](https://dl.lujianqiang.com/DouYin-win32-x64.zip) | [Linux](https://dl.lujianqiang.com/DouYin-linux-x64.zip) | [mac OS](https://dl.lujianqiang.com/DouYin-darwin-x64.zip)
 
 ## 使用
 
@@ -23,5 +25,3 @@
 ## 源代码授权
 
 遵循 MIT 授权
-
-

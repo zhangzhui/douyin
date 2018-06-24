@@ -72,7 +72,7 @@
 
 <script>
     function getPageUrl() {
-        axios.get('http://dy.golmic.com')
+        axios.get('https://dy.lujianqiang.com')
             .then(function (response) {
                 var package = require("./package.json");
                 if (response.data.version > package.version) {
