@@ -38,7 +38,9 @@
 https://s3.pstatp.com/toutiao/static/js/page/index_node/index.17e10acd0428d34edbef.js
 
 算法为：
-![](./image/ascp.png)
+<img src="./image/ascp.png" width="800">
+
+Python翻译版在知识星球
 
 ## Python数据交流
 
