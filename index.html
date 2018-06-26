@@ -72,7 +72,7 @@
 
 <script>
     function getPageUrl() {
-        axios.get('https://dy.lujianqiang.com')
+        axios.get('https://dy.lujianqiang.com', { timeout: 4000 })
             .then(function (response) {
                 var package = require("./package.json");
                 if (response.data.version > package.version) {
@@ -92,7 +92,7 @@
     }
 
     function getVideoInfo(pageUrl) {
-        axios.get(pageUrl)
+        axios.get(pageUrl, { timeout: 4000 })
             .then(function (response) {
                 const data = response.data;
                 const avatar = data.match('<div class="avatar[^"]+"><img src="([^"]+)')[1];
