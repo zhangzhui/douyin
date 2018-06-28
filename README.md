@@ -2,6 +2,10 @@
 
 <div align="center"><img src="./icons/a.png" width="140"></div>
 
+## 开发计划
+
+预计本周末(2018.7.1)发布v0.3.0版本，实现本地收藏功能。
+
 
 ## 应用界面
 
