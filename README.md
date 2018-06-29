@@ -4,20 +4,20 @@
 
 ## 开发计划
 
-预计本周末(2018.7.1)发布 v0.3.0 版本，实现本地收藏功能。
+本周末(2018.7.1)调研评论弹幕。
 
 ## 应用界面
 
 <div style='display:"inline"'>
-<img src="./screenshot/macos.png" width="200">
-<img src="./screenshot/windows.png" width="200">
+<img src="./screenshot/1.png" width="200">
+<img src="./screenshot/2.png" width="200">
 </div>
 
 ## 下载
 
 - Github Releases：
   [releases 页面](https://github.com/lujqme/douyin/releases)下载相应系统对应版本
-- 服务器分发：[Windows](https://dl.lujianqiang.com/DouYin-win32-x64.zip) | [Linux](https://dl.lujianqiang.com/DouYin-linux-x64.zip) | [mac OS](https://dl.lujianqiang.com/DouYin-darwin-x64.zip)
+- 服务器分发：[Windows](https://dl.lujianqiang.com/douyin_Setup_0.3.0.exe) | [mac OS](https://dl.lujianqiang.com/douyin-0.3.0.dmg)
 
 ## 使用
 

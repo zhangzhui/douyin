@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "pack": "electron-builder --dir",
-    "dist": "electron-builder && electron-builder --windows --x64 && electron-builder --linux --x64"
+    "dist": "electron-builder && electron-builder --windows --x64"
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -30,7 +30,6 @@
       "target": [
         "nsis"
       ]
-    },
-    "linux": {}
+    }
   }
 }
