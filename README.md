@@ -2,11 +2,9 @@
 
 <div align="center"><img src="./icon.png" width="140"></div>
 
-## 停止维护
+## 服务器维护中
 
-因各种原因，本项目不再维护、更新。
-服务器将于2018年7月10日关闭。
-十分感谢大家支持。
+因抖音接口策略调整，之前的数据获取方式遇到了问题，现在也需要做相应调整，预计 7 月 15 日之前出下一版。
 
 ## 应用界面
 
@@ -17,9 +15,7 @@
 
 ## 下载
 
-- Github Releases：
-  [releases 页面](https://github.com/lujqme/douyin/releases)下载相应系统对应版本
-- 服务器分发：[Windows](https://dl.lujianqiang.com/douyin_Setup_0.3.0.exe) | [mac OS](https://dl.lujianqiang.com/douyin-0.3.0.dmg)
+请期待下一版本。
 
 ## 使用
 
@@ -27,7 +23,9 @@
 
 ## 声明
 
-本应用使用今日头条官网 web 端公开的相应参数算法(见下)，未对抖音 APP 做逆向、分析、破解。
+UPDATE：因抖音接口策略调整，本应用不再请求抖音接口。
+
+<del>本应用使用今日头条官网 web 端公开的相应参数算法(见下)></del>，未对抖音 APP 做逆向、分析、破解。
 
 应用内的内容及视频版权归原作者以及抖音官方所有，本应用及其服务端不储存任何数据。
 
@@ -37,7 +35,7 @@
 
 遵循 MIT 授权
 
-## 参数算法
+## 参数算法（已失效）
 
 具体 js 为：
 https://s3.pstatp.com/toutiao/static/js/page/index_node/index.17e10acd0428d34edbef.js
@@ -46,6 +44,10 @@ https://s3.pstatp.com/toutiao/static/js/page/index_node/index.17e10acd0428d34edb
 <img src="./image/ascp.png" width="800">
 
 Python 翻译版在知识星球
+
+## 新采集策略
+
+抖音修改接口加密参数之后的采集策略见知识星球。
 
 ## Python 数据交流
 
