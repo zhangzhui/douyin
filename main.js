@@ -8,22 +8,22 @@ const axios = require('axios');
 var userData = app.getPath('userData');
 let Datastore = require('nedb'),
   db = new Datastore({
-    filename: userData + 'ne.db',
+    filename: userData + '/love.db',
     autoload: true
   });
 let win, pageUrl;
+
 
 function getPageUrl() {
   axios.get('https://dy.lujianqiang.com', {
       timeout: 4000
     })
     .then(function (response) {
-      var package = require("./package.json");
-      if (response.data.version > package.version) {
-        win.webContents.send('version', 'update');
-      }
       if (response.data.code === 0) {
-        win.webContents.send('refresh', response.data.url);
+        win.webContents.send('refresh', {
+          url: response.data.url,
+          comments: response.data.comments
+        });
         isLoved(response.data.url);
       } else {
         win.webContents.send('error', response.data.message);
@@ -31,6 +31,22 @@ function getPageUrl() {
     })
     .catch(function (error) {
       win.webContents.send('error', '请求失败，请检查网络环境以及与服务器连接是否正常');
+    });
+}
+
+function checkUpdate() {
+  axios.get('https://dy.lujianqiang.com/version', {
+      timeout: 4000
+    })
+    .then(function (response) {
+      var package = require("./package.json");
+      if (package.version < response.data.currentVersion) {
+        if (package.version < response.data.supportedVersion) {
+          win.loadFile("update.html");
+        } else {
+          win.webContents.send('version', null);
+        }
+      }
     });
 }
 
@@ -63,6 +79,7 @@ function isLoved(url) {
   });
 }
 
+
 app.on("ready", () => {
   createWindow();
   win.loadFile("recommend.html");
@@ -81,11 +98,18 @@ app.on("window-all-closed", () => {
   }
 });
 
+ipc.on('checkUpdate', function (event, message) {
+  checkUpdate();
+});
+
 ipc.on('refresh', function (event, message) {
   if (pageUrl == null) {
     getPageUrl();
   } else {
-    win.webContents.send('refresh', pageUrl);
+    win.webContents.send('refresh', {
+      url: pageUrl,
+      comments: []
+    });
     isLoved(pageUrl);
     pageUrl = null;
   }
@@ -96,7 +120,9 @@ ipc.on('changeTab', function (event, message) {
 });
 
 ipc.on('play', function (event, url) {
-  pageUrl = url;
+  if (url !== '') {
+    pageUrl = url;
+  }
   win.loadFile("recommend.html");
 });
 
